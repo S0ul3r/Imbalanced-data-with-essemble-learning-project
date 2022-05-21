@@ -6,10 +6,13 @@ from sklearn.ensemble import AdaBoostClassifier, BaggingClassifier, RandomForest
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.model_selection import RepeatedStratifiedKFold
 from imblearn.metrics import geometric_mean_score
+from myForest import myForEns
 
 # bagging;
 # random forest; 
 # adaboost;
+
+
 
 datasets = ['ecoli-0-1_vs_2-3-5', 'ecoli-0-1_vs_5', 'ecoli-0-1-4-6_vs_5', 'ecoli-0-3-4_vs_5', 'ecoli-0-4-6_vs_5',
             'ecoli-0-6-7_vs_5', 'glass-0-1-4-6_vs_2', 'glass-0-1-5_vs_2', 'glass-0-1-6_vs_2', 'glass-0-1-6_vs_5', 'glass-0-4_vs_5',
@@ -19,7 +22,8 @@ names = ["accuracy_results", "error_results", "precision_results", "recall_resul
 ens_d = {
     'Bagging': BaggingClassifier(),
     'AdaBoost': AdaBoostClassifier(),
-    'RandomForest': RandomForestClassifier()
+    'RandomForest': RandomForestClassifier(),
+    'myForest': myForEns()
 }
 
 n_datasets = len(datasets)
