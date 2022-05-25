@@ -6,6 +6,7 @@ from sklearn.ensemble import AdaBoostClassifier, BaggingClassifier, RandomForest
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.model_selection import RepeatedStratifiedKFold
 from imblearn.metrics import geometric_mean_score
+from sklearn.tree import DecisionTreeClassifier
 from myForest import myForEns
 
 # bagging;
@@ -20,10 +21,10 @@ datasets = ['ecoli-0-1_vs_2-3-5', 'ecoli-0-1_vs_5', 'ecoli-0-1-4-6_vs_5', 'ecoli
 names = ["accuracy_results", "error_results", "precision_results", "recall_results", "f1_results", "gmean_results"]
 
 ens_d = {
-    'Bagging': BaggingClassifier(),
-    'AdaBoost': AdaBoostClassifier(),
-    'RandomForest': RandomForestClassifier(),
-    'myForest': myForEns()
+    'Bagging': BaggingClassifier(base_estimator=DecisionTreeClassifier(), n_estimators=200),
+    'AdaBoost': AdaBoostClassifier(base_estimator=DecisionTreeClassifier(), n_estimators=200),
+    'RandomForest': RandomForestClassifier(n_estimators=200),
+    'myForest': myForEns(n_trees=200)
 }
 
 n_datasets = len(datasets)
@@ -53,5 +54,4 @@ for dataset_id, dataset in enumerate(datasets):
             gmean_scores[dataset_id, fold_id, ens_id] = geometric_mean_score(y[test], prediction)
 
 for id, score in enumerate(scores):
-    mean = np.mean(score, axis=1)
-    np.save(f'results/{names[id]}', mean)
+    np.save(f'results/{names[id]}', score)

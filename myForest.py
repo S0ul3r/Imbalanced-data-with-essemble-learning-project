@@ -81,12 +81,12 @@ class myForEns(BaseEnsemble, ClassifierMixin):
         
         return self.classes_[prediction]
 
-X, y = datasets.make_classification(n_samples=200, n_features=10, n_informative=10, n_redundant = 0, n_repeated=0, random_state=1234)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=1234)
+#X, y = datasets.make_classification(n_samples=200, n_features=10, n_informative=10, n_redundant = 0, n_repeated=0, random_state=1234)
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=1234)
 
-myForestEns = myForEns(random_state=1234)
+#myForestEns = myForEns(random_state=1234)
 
-myForestEns.fit(X_train, y_train)
-predict = myForestEns.predict(X_test)
-score = accuracy_score(y_test, predict)
-print(score)
+#myForestEns.fit(X_train, y_train)
+#predict = myForestEns.predict(X_test)
+#score = accuracy_score(y_test, predict)
+#print(score)
