@@ -1,0 +1,648 @@
+ecoli-0-1_vs_2-3-5:
+
+[[0.4  0.6  0.2  0.2 ]
+ [0.6  0.6  0.6  0.4 ]
+ [0.8  0.6  0.6  0.6 ]
+ [1.   0.8  1.   1.  ]
+ [0.75 1.   1.   1.  ]
+ [1.   1.   1.   0.8 ]
+ [0.4  0.2  0.2  0.2 ]
+ [0.6  0.6  0.6  0.6 ]
+ [0.4  0.4  0.4  0.4 ]
+ [1.   1.   1.   1.  ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.303           0.805       1.567
+AdaBoost         -0.303     nan               0.429       1.152
+RandomForest     -0.805      -0.429         nan           1.500
+myForest         -1.567      -1.152          -1.500     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.769           0.442       0.152
+AdaBoost          0.769     nan               0.678       0.279
+RandomForest      0.442       0.678         nan           0.168
+myForest          0.152       0.279           0.168     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           1.000       1.000
+AdaBoost          0.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+ecoli-0-1_vs_5:
+
+[[0.5  0.5  0.5  0.5 ]
+ [0.75 0.5  0.5  0.5 ]
+ [0.75 0.75 1.   0.5 ]
+ [0.75 0.75 0.75 0.75]
+ [0.75 0.75 0.75 0.75]
+ [1.   0.75 1.   0.75]
+ [0.75 0.75 0.75 0.25]
+ [1.   0.5  0.75 0.5 ]
+ [0.25 0.25 0.5  0.25]
+ [0.75 0.75 0.75 0.75]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           1.809           0.000       2.689
+AdaBoost         -1.809     nan              -2.449       1.406
+RandomForest      0.000       2.449         nan           2.689
+myForest         -2.689      -1.406          -2.689     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.104           1.000       0.025
+AdaBoost          0.104     nan               0.037       0.193
+RandomForest      1.000       0.037         nan           0.025
+myForest          0.025       0.193           0.025     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           1.000       0.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          1.000       0.000           1.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+
+ecoli-0-1-4-6_vs_5:
+
+[[0.75 0.5  0.75 0.25]
+ [1.   0.75 1.   0.75]
+ [0.5  0.5  0.75 0.5 ]
+ [0.75 0.25 0.75 0.  ]
+ [0.5  0.5  0.5  0.5 ]
+ [0.75 0.75 0.75 0.25]
+ [0.75 0.5  1.   0.25]
+ [0.5  0.5  0.5  0.25]
+ [1.   0.5  1.   0.5 ]
+ [1.   1.   1.   0.75]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           2.689          -1.500       4.583
+AdaBoost         -2.689     nan              -3.250       3.280
+RandomForest      1.500       3.250         nan           5.237
+myForest         -4.583      -3.280          -5.237     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.025           0.168       0.001
+AdaBoost          0.025     nan               0.010       0.010
+RandomForest      0.168       0.010         nan           0.001
+myForest          0.001       0.010           0.001     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      1.000       1.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       1.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          1.000       1.000           1.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+
+ecoli-0-3-4_vs_5:
+
+[[0.75 0.5  0.75 0.75]
+ [0.5  0.5  0.5  0.75]
+ [1.   1.   1.   1.  ]
+ [0.75 0.75 0.75 0.75]
+ [0.75 0.75 0.75 0.75]
+ [0.75 0.75 0.75 0.75]
+ [0.75 0.75 0.5  0.5 ]
+ [1.   0.25 1.   0.5 ]
+ [0.5  0.5  0.5  0.5 ]
+ [1.   1.   1.   1.  ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           1.309           1.000       0.802
+AdaBoost         -1.309     nan              -0.896      -1.000
+RandomForest     -1.000       0.896         nan           0.429
+myForest         -0.802       1.000          -0.429     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.223           0.343       0.443
+AdaBoost          0.223     nan               0.394       0.343
+RandomForest      0.343       0.394         nan           0.678
+myForest          0.443       0.343           0.678     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           1.000       1.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       1.000           0.000       1.000
+myForest          0.000       1.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+ecoli-0-4-6_vs_5:
+
+[[1.   1.   1.   0.5 ]
+ [0.75 0.75 0.75 0.5 ]
+ [0.5  0.5  0.5  0.5 ]
+ [0.5  0.5  0.75 0.25]
+ [1.   1.   1.   1.  ]
+ [1.   0.75 1.   0.5 ]
+ [0.5  0.25 0.5  0.25]
+ [1.   1.   1.   0.5 ]
+ [1.   1.   1.   0.5 ]
+ [0.25 0.5  0.25 0.25]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.557          -1.000       3.973
+AdaBoost         -0.557     nan              -1.000       3.873
+RandomForest      1.000       1.000         nan           4.129
+myForest         -3.973      -3.873          -4.129     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.591           0.343       0.003
+AdaBoost          0.591     nan               0.343       0.004
+RandomForest      0.343       0.343         nan           0.003
+myForest          0.003       0.004           0.003     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      1.000       1.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          1.000       1.000           1.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+
+ecoli-0-6-7_vs_5:
+
+[[1.   1.   0.75 0.25]
+ [0.75 0.75 0.75 0.  ]
+ [0.75 0.5  0.5  0.  ]
+ [0.75 0.75 0.75 0.25]
+ [1.   1.   1.   0.  ]
+ [0.75 0.75 0.75 0.  ]
+ [0.75 0.75 0.75 0.  ]
+ [1.   1.   1.   0.25]
+ [0.75 0.75 0.75 0.  ]
+ [0.75 0.75 0.5  0.25]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           1.000           1.964      16.155
+AdaBoost         -1.000     nan               1.500      14.000
+RandomForest     -1.964      -1.500         nan           9.750
+myForest        -16.155     -14.000          -9.750     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.343           0.081       0.000
+AdaBoost          0.343     nan               0.168       0.000
+RandomForest      0.081       0.168         nan           0.000
+myForest          0.000       0.000           0.000     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           1.000       1.000
+AdaBoost          0.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          1.000       1.000           1.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-1-4-6_vs_2:
+
+[[0.         0.         0.         0.        ]
+ [0.         0.33333333 0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.25       0.         0.        ]
+ [0.         0.25       0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.33333333 0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.25       0.25       0.         0.        ]
+ [0.         0.         0.         0.        ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan          -2.409           1.000       1.000
+AdaBoost          2.409     nan               2.940       2.940
+RandomForest     -1.000      -2.940         nan         nan
+myForest         -1.000      -2.940         nan         nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.039           0.343       0.343
+AdaBoost          0.039     nan               0.016       0.016
+RandomForest      0.343       0.016         nan         nan
+myForest          0.343       0.016         nan         nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           1.000       1.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       0.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       1.000           0.000       0.000
+myForest          0.000       1.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-1-5_vs_2:
+
+[[0.         0.         0.         0.        ]
+ [0.         0.5        0.         0.        ]
+ [0.33333333 0.33333333 0.33333333 0.        ]
+ [0.         0.66666667 0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.25       0.5        0.         0.        ]
+ [0.         0.25       0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.33333333 0.         0.        ]
+ [0.         0.66666667 0.         0.        ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan          -3.105           1.000       1.481
+AdaBoost          3.105     nan               3.280       3.924
+RandomForest     -1.000      -3.280         nan           1.000
+myForest         -1.481      -3.924          -1.000     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.013           0.343       0.173
+AdaBoost          0.013     nan               0.010       0.003
+RandomForest      0.343       0.010         nan           0.343
+myForest          0.173       0.003           0.343     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           1.000       1.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           0.000       0.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       1.000           0.000       0.000
+myForest          0.000       1.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-1-6_vs_2:
+
+[[0.25       0.25       0.25       0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.33333333 0.33333333 0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan         nan               1.000       1.481
+AdaBoost        nan         nan               1.000       1.481
+RandomForest     -1.000      -1.000         nan           1.000
+myForest         -1.481      -1.481          -1.000     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan         nan               0.343       0.173
+AdaBoost        nan         nan               0.343       0.173
+RandomForest      0.343       0.343         nan           0.343
+myForest          0.173       0.173           0.343     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           1.000       1.000
+AdaBoost          0.000       0.000           1.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-1-6_vs_5:
+
+[[1.  1.  1.  0. ]
+ [1.  1.  1.  0.5]
+ [0.5 0.5 0.5 0.5]
+ [0.5 1.  0.5 0. ]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  0. ]
+ [0.5 0.5 0.5 0.5]
+ [0.5 1.  1.  0. ]
+ [1.  1.  1.  0.5]
+ [0.  0.  0.  0. ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan          -1.500          -1.000       3.207
+AdaBoost          1.500     nan               1.000       3.354
+RandomForest      1.000      -1.000         nan           3.250
+myForest         -3.207      -3.354          -3.250     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.168           0.343       0.011
+AdaBoost          0.168     nan               0.343       0.008
+RandomForest      0.343       0.343         nan           0.010
+myForest          0.011       0.008           0.010     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          1.000       0.000           1.000       1.000
+RandomForest      1.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          1.000       1.000           1.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-4_vs_5:
+
+[[1.  1.  1.  1. ]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  0.5]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  0.5]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  0. ]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan         nan             nan           1.809
+AdaBoost        nan         nan             nan           1.809
+RandomForest    nan         nan             nan           1.809
+myForest         -1.809      -1.809          -1.809     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan         nan             nan           0.104
+AdaBoost        nan         nan             nan           0.104
+RandomForest    nan         nan             nan           0.104
+myForest          0.104       0.104           0.104     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       0.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+
+glass-0-6_vs_5:
+
+[[1.  0.  1.  0.5]
+ [0.5 1.  0.  0.5]
+ [1.  1.  1.  0.5]
+ [1.  1.  1.  1. ]
+ [1.  1.  1.  0.5]
+ [1.  1.  1.  0.5]
+ [1.  1.  1.  1. ]
+ [1.  0.5 1.  0.5]
+ [1.  1.  0.  0. ]
+ [1.  0.5 1.  0.5]]
+
+t-stat:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           1.152           1.406       4.000
+AdaBoost         -1.152     nan               0.000       1.861
+RandomForest     -1.406       0.000         nan           2.236
+myForest         -4.000      -1.861          -2.236     nan
+
+p-value:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging         nan           0.279           0.193       0.003
+AdaBoost          0.279     nan               1.000       0.096
+RandomForest      0.193       1.000         nan           0.052
+myForest          0.003       0.096           0.052     nan
+
+advantage:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       1.000           1.000       1.000
+AdaBoost          0.000       0.000           0.000       1.000
+RandomForest      0.000       0.000           0.000       1.000
+myForest          0.000       0.000           0.000       0.000
+
+significance:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          1.000       0.000           0.000       0.000
+
+stat-better:
+                Bagging    AdaBoost    RandomForest    myForest
+------------  ---------  ----------  --------------  ----------
+Bagging           0.000       0.000           0.000       1.000
+AdaBoost          0.000       0.000           0.000       0.000
+RandomForest      0.000       0.000           0.000       0.000
+myForest          0.000       0.000           0.000       0.000
+
+

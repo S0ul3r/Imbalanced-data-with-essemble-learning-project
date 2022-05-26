@@ -18,7 +18,8 @@ class myForEns(BaseEnsemble, ClassifierMixin):
         self.random_state = random_state
         self.max_features = max_features
 
-        np.random.seed(self.random_state)
+        np.random.default_rng(self.random_state)
+        #np.random.seed(self.random_state)
 
     def fit(self, X, y):
         

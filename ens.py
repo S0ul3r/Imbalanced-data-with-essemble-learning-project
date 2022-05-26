@@ -14,7 +14,6 @@ from myForest import myForEns
 # adaboost;
 
 
-
 datasets = ['ecoli-0-1_vs_2-3-5', 'ecoli-0-1_vs_5', 'ecoli-0-1-4-6_vs_5', 'ecoli-0-3-4_vs_5', 'ecoli-0-4-6_vs_5',
             'ecoli-0-6-7_vs_5', 'glass-0-1-4-6_vs_2', 'glass-0-1-5_vs_2', 'glass-0-1-6_vs_2', 'glass-0-1-6_vs_5', 'glass-0-4_vs_5',
             'glass-0-6_vs_5']
@@ -46,8 +45,6 @@ for dataset_id, dataset in enumerate(datasets):
             ens = sk.clone(ens_d[ens_name])
             ens.fit(X[train], y[train])
             prediction = ens.predict(X[test])
-            a_scores[dataset_id, fold_id, ens_id] = accuracy_score(y[test], prediction)
-            e_scores[dataset_id, fold_id, ens_id] = 1 - accuracy_score(y[test], prediction)
             p_scores[dataset_id, fold_id, ens_id] = precision_score(y[test], prediction, zero_division=0)
             r_scores[dataset_id, fold_id, ens_id] = recall_score(y[test], prediction, zero_division=0)
             f1_scores[dataset_id, fold_id, ens_id] = f1_score(y[test], prediction, zero_division=0)
