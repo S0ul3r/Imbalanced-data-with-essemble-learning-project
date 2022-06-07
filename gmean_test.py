@@ -47,6 +47,6 @@ with open(f"test_results/geometric_mean_results.txt", "w") as f:
         sig_table = tabulate(np.concatenate((names_column, sig), axis = 1), headers, floatfmt=".3f")
         result_table = tabulate(np.concatenate((names_column, s_better), axis = 1), headers, floatfmt=".3f")
 
-        test_results = f"{datasets[dataset]}:\n\n{scores[dataset, :, :]}\n\nt-stat:\n{t_stat_table}\n\np-value:\n{p_val_table}\n\nadvantage:\n{adv_table}\n\nsignificance:\n{sig_table}\n\nstat-better:\n{result_table}\n\n\n"
+        test_results = f"{datasets[dataset]}:\n\n{np.mean(scores[dataset, :, :], axis=0)}\n\nt-stat:\n{t_stat_table}\n\np-value:\n{p_val_table}\n\nadvantage:\n{adv_table}\n\nsignificance:\n{sig_table}\n\nstat-better:\n{result_table}\n\n\n"
         print(test_results)
         f.write(test_results)

@@ -1,6 +1,7 @@
 import numpy as np
 import enum
-from sklearn.ensemble import BaseEnsemble, BaggingClassifier
+from scipy.stats import mode
+from sklearn.ensemble import BaseEnsemble, BaggingClassifier, RandomForestClassifier
 from sklearn.base import ClassifierMixin, clone
 from sklearn.utils.validation import check_array, check_is_fitted, check_X_y
 from sklearn.naive_bayes import GaussianNB
@@ -13,13 +14,13 @@ from sklearn.model_selection import train_test_split
 class myForEns(BaseEnsemble, ClassifierMixin):
     def __init__(self, n_trees = 100, max_features = 'sqrt', random_state = None):
 
-        self.base_estimator = DecisionTreeClassifier()
+        self.base_estimator = DecisionTreeClassifier(random_state=random_state, splitter='random')
         self.n_trees = n_trees
         self.random_state = random_state
         self.max_features = max_features
 
-        np.random.default_rng(self.random_state)
-        #np.random.seed(self.random_state)
+        #np.random.default_rng(self.random_state)
+        np.random.seed(self.random_state)
 
     def fit(self, X, y):
         
@@ -59,9 +60,11 @@ class myForEns(BaseEnsemble, ClassifierMixin):
             self.subset[i] = self.bags[i, :, self.subfeat[i]].T
         #print(self.subset[1])
 
+        self.weights = np.zeros(self.n_trees)
         self.ensamble_ = []
         for i in range(self.n_trees):
             self.ensamble_.append(clone(self.base_estimator).fit(self.subset[i], y[self.samples[i]]))
+            self.weights[i] = accuracy_score(self.ensamble_[i].predict(X[:, self.subfeat[i]]), y[self.samples[i]])
 
         return self
     def predict(self, X):
@@ -71,23 +74,32 @@ class myForEns(BaseEnsemble, ClassifierMixin):
         X = check_array(X)
 
         pred_ = []
-        
         #print(X.shape)
         for i, member_clf in enumerate(self.ensamble_):
-                pred_.append(member_clf.predict(X[:, self.subfeat[i]]))
-        
+            pred_.append(member_clf.predict(X[:, self.subfeat[i]]))
         pred_ = np.array(pred_)
-        
         prediction = np.apply_along_axis(lambda x: np.argmax(np.bincount(x)), axis=1, arr=pred_.T)
+
+        #self.probas = np.zeros((self.n_trees, X.shape[0], self.classes_.shape[0]))
+        #for i, clf in enumerate(self.ensamble_):
+            #self.probas[i] = clf.predict_proba(X[:, self.subfeat[i]])
+            #self.probas[i] = self.probas[i]*self.weights[i]
+        #average_support = np.mean(self.probas, axis=0)
+        #prediction = np.argmax(average_support, axis=1)
         
         return self.classes_[prediction]
 
-#X, y = datasets.make_classification(n_samples=200, n_features=10, n_informative=10, n_redundant = 0, n_repeated=0, random_state=1234)
+#X, y = datasets.make_classification(n_samples=200, n_features=10, n_informative=10, n_redundant = 0, n_repeated=0, weights=[0.05, 0.95], random_state=1234)
 #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=1234)
 
 #myForestEns = myForEns(random_state=1234)
+#forest = RandomForestClassifier(random_state=1234)
 
 #myForestEns.fit(X_train, y_train)
+#forest.fit(X_train, y_train)
+#predict = myForestEns.predict(X_test)
+#score = accuracy_score(y_test, predict)
+#print(score)
 #predict = myForestEns.predict(X_test)
 #score = accuracy_score(y_test, predict)
 #print(score)
